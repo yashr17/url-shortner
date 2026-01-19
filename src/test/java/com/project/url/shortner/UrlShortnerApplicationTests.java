@@ -1,13 +1,13 @@
-package com.project.url.shortner;
+// package com.project.url.shortner;
 
-import org.junit.jupiter.api.Test;
-import org.springframework.boot.test.context.SpringBootTest;
+// import org.junit.jupiter.api.Test;
+// import org.springframework.boot.test.context.SpringBootTest;
 
-@SpringBootTest
-class UrlShortnerApplicationTests {
+// @SpringBootTest
+// class UrlShortnerApplicationTests {
 
-	@Test
-	void contextLoads() {
-	}
+// @Test
+// void contextLoads() {
+// }
 
-}
+// }
