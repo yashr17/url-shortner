@@ -1,8 +1,5 @@
 package com.project.urlshortner.dto;
 
-import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.Pattern;
-
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -11,11 +8,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class ShortenRequest {
-    @NotBlank(message = "URL is required")
-    @Pattern(regexp = "^https?://.*", message = "Invalid URL format")
     private String url;
-    
     private String customAlias; // Optional custom short code
-    
     private Integer expiryDays; // Optional expiry
 }
