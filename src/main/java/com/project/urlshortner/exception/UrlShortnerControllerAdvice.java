@@ -1,6 +1,8 @@
 package com.project.urlshortner.exception;
 
 import javax.servlet.http.HttpServletRequest;
+import java.util.Arrays;
+import java.util.stream.Collectors;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -19,10 +21,10 @@ public class UrlShortnerControllerAdvice {
             UrlShortenerException ex, HttpServletRequest request) {
 
         ErrorResponse errorResponse = ErrorResponse.builder()
-            .httpStatus(ex.getHttpStatus())
-            .message(ex.getMessage())
-            .path(request.getRequestURI())
-            .build();
+                .httpStatus(ex.getHttpStatus())
+                .message(ex.getMessage())
+                .path(request.getRequestURI())
+                .build();
 
         return ResponseEntity.status(ex.getHttpStatus()).body(errorResponse);
     }
@@ -40,10 +42,11 @@ public class UrlShortnerControllerAdvice {
         }
 
         ErrorResponse errorResponse = ErrorResponse.builder()
-            .httpStatus(status)
-            .message(message)
-            .path(request.getRequestURI())
-            .build();
+                .httpStatus(status)
+                .message(message)
+                .details(getTruncatedStackTrace(ex, 5))
+                .path(request.getRequestURI())
+                .build();
 
         return ResponseEntity.status(status).body(errorResponse);
     }
@@ -61,10 +64,11 @@ public class UrlShortnerControllerAdvice {
         }
 
         ErrorResponse errorResponse = ErrorResponse.builder()
-            .httpStatus(status)
-            .message(message)
-            .path(request.getRequestURI())
-            .build();
+                .httpStatus(status)
+                .message(message)
+                .details(getTruncatedStackTrace(ex, 5))
+                .path(request.getRequestURI())
+                .build();
 
         return ResponseEntity.status(status).body(errorResponse);
     }
@@ -72,13 +76,27 @@ public class UrlShortnerControllerAdvice {
     @ExceptionHandler(Exception.class)
     public ResponseEntity<ErrorResponse> handleGenericException(
             Exception ex, HttpServletRequest request) {
+        String message = ex.getMessage();
+        if (message == null) {
+            message = UNKNOWN_EXCEPTION_MESSAGE + " - Internal server error";
+        }
 
         ErrorResponse errorResponse = ErrorResponse.builder()
-            .httpStatus(HttpStatus.INTERNAL_SERVER_ERROR)
-            .message(UNKNOWN_EXCEPTION_MESSAGE + " - Internal server error")
-            .path(request.getRequestURI())
-            .build();
+                .httpStatus(HttpStatus.INTERNAL_SERVER_ERROR)
+                .message(message)
+                .details(getTruncatedStackTrace(ex, 5))
+                .path(request.getRequestURI())
+                .build();
 
         return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(errorResponse);
+    }
+
+    private String getTruncatedStackTrace(Throwable ex, int maxElements) {
+        if (ex == null)
+            return null;
+        return Arrays.stream(ex.getStackTrace())
+                .limit(maxElements)
+                .map(StackTraceElement::toString)
+                .collect(Collectors.joining("\n"));
     }
 }

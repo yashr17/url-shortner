@@ -2,7 +2,6 @@ package com.project.urlshortner.controller;
 
 import javax.servlet.http.HttpServletRequest;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -14,13 +13,14 @@ import com.project.urlshortner.dto.ShortenRequest;
 import com.project.urlshortner.dto.ShortenResponse;
 import com.project.urlshortner.service.UrlService;
 
+import lombok.RequiredArgsConstructor;
 
 @RestController
 @RequestMapping("/api")
+@RequiredArgsConstructor
 public class UrlController {
 
-    @Autowired
-    private UrlService urlService;
+    private final UrlService urlService;
 
     @PostMapping("/v1/shorten")
     public ResponseEntity<ShortenResponse> shortenUrl(@RequestBody @Validated ShortenRequest request,
