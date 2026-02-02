@@ -55,4 +55,8 @@ public class Url {
     protected void onCreate() {
         createdAt = LocalDateTime.now();
     }
+
+    public boolean isExpired() {
+        return expiresAt != null && LocalDateTime.now().isAfter(expiresAt);
+    }
 }

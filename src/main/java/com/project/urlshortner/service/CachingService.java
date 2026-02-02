@@ -28,4 +28,17 @@ public class CachingService {
             // Don't fail if cache fails - database is source of truth
         }
     }
+
+    public String getCachedUrl(String shortCode) {
+        try {
+            String cacheKey = URL_CACHE_PREFIX + shortCode;
+            Object cachedValue = redisTemplate.opsForValue().get(cacheKey);
+            if (cachedValue != null) {
+                return (String) cachedValue;
+            }
+        } catch (Exception e) {
+            // Don't fail if cache fails - database is source of truth
+        }
+        return null;
+    }
 }
