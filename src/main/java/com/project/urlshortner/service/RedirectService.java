@@ -50,11 +50,18 @@ public class RedirectService {
         String ipAddress = getClientIp(request);
         String userAgent = request.getHeader("User-Agent");
         String referrer = request.getHeader("Referer");
+        String country = getCountryFromIp(ipAddress);
         return RequestInfo.builder()
                 .ipAddress(ipAddress)
                 .userAgent(userAgent)
                 .referrer(referrer)
+                .country(country)
                 .build();
+    }
+
+    private String getCountryFromIp(String ipAddress) {
+        // Placeholder for actual IP to country resolution logic
+        return null; // Defaulting to null for demonstration purposes
     }
 
     private String getClientIp(HttpServletRequest request) {

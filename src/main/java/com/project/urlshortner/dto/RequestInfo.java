@@ -15,4 +15,5 @@ public class RequestInfo {
     private String ipAddress;
     private String userAgent;
     private String referrer;
+    private String country;
 }

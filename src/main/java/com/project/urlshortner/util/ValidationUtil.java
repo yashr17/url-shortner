@@ -3,9 +3,11 @@ package com.project.urlshortner.util;
 import org.springframework.stereotype.Component;
 
 import com.project.urlshortner.entity.ApiKey;
+import com.project.urlshortner.entity.Url;
 import com.project.urlshortner.exception.BadRequestException;
 import com.project.urlshortner.exception.UnauthorizedException;
 import com.project.urlshortner.repository.ApiKeyRepository;
+import com.project.urlshortner.repository.UrlRepository;
 
 import lombok.RequiredArgsConstructor;
 
@@ -14,6 +16,7 @@ import lombok.RequiredArgsConstructor;
 public class ValidationUtil {
 
     private final ApiKeyRepository apiKeyRepository;
+    private final UrlRepository urlRepository;
 
     private static final String URL_REGEX = "^(https?)://[-a-zA-Z0-9+&@#/%?=~_|!:,.;]*[-a-zA-Z0-9+&@#/%=~_|]";
     private static final int MIN_URL_LENGTH = 10;
@@ -46,4 +49,10 @@ public class ValidationUtil {
             throw new BadRequestException("URL is too long (maximum 2048 characters)");
         }
     }
+
+    public Url validateApiKeyAndShortcode(String apiKey, String shortcode) {
+        return urlRepository.findByShortCodeAndApiKey_ApiKeyAndIsActiveTrue(shortcode, apiKey)
+                .orElseThrow(() -> new UnauthorizedException("Invalid shortcode and API key combination"));
+    }
+
 }

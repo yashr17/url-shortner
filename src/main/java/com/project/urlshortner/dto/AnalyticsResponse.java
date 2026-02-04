@@ -12,8 +12,11 @@ import lombok.Data;
 public class AnalyticsResponse {
     private String shortCode;
     private String originalUrl;
-    private Long totalClicks;
+    private String shortUrl;
     private LocalDateTime createdAt;
+    private LocalDateTime expiresAt;
+    private Long totalClicks;
+    private boolean isActive;
     private List<ClickData> recentClicks;
     private Map<String, Long> clicksByDate;
     private Map<String, Long> clicksByCountry;
