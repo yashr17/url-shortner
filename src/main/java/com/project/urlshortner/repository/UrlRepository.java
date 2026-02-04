@@ -18,4 +18,5 @@ public interface UrlRepository extends JpaRepository<Url, Long> {
     @Query("UPDATE Url u SET u.clickCount = u.clickCount + 1 WHERE u.shortCode = ?1")
     public void incrementClickCount(String shortcode);
 
+    public Optional<Url> findByShortCodeAndApiKey_ApiKeyAndIsActiveTrue(String shortCode, String apiKey);
 }
