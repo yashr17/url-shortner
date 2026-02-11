@@ -93,7 +93,7 @@ public class AnalyticsService {
     }
 
     private List<ClickData> getRecentClicks(Long urlId) {
-        return urlAnalyticsRepository.findTop10ByUrlIdOrderByClickedAtDesc(urlId)
+        return urlAnalyticsRepository.findTop10ByUrlIdOrderByClickedAtDesc(urlId) // fixed limit to 10
                 .stream()
                 .map(a -> ClickData.builder()
                         .clickedAt(a.getClickedAt())

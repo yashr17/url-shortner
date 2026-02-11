@@ -1,0 +1,38 @@
+spring:
+  application:
+    name: url-shortener
+
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+    open-in-view: false
+    show-sql: false
+
+  flyway:
+    enabled: true
+    baseline-on-migrate: true
+    locations: classpath:db/migration
+
+  cache:
+    type: redis
+    redis:
+      time-to-live: 3600000
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info
+
+server:
+  port: ${PORT:8080}
+  address: 0.0.0.0
+
+app:
+  short-code-length: 7
+  default-expiry-days: 7
+  analytics:
+    recent-clicks-limit: 10
