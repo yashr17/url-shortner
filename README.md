@@ -498,9 +498,9 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 👤 Author
 
-**Your Name**
-- GitHub: [@yashr17](https://github.com/yashr17/url-shortner)
-- LinkedIn: [Your Profile](https://linkedin.com/in/yashr17)
+**P. Yash Reddy**
+- GitHub: [github.com/yashr17](https://github.com/yashr17/url-shortner)
+- LinkedIn: [linkedin.com/in/yashr17](https://linkedin.com/in/yashr17)
 
 ---
 
@@ -515,7 +515,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ## 📞 Support
 
 For issues or questions:
-1. Check existing [GitHub Issues](https://github.com/yourusername/url-shortener/issues)
+1. Check existing [GitHub Issues](https://github.com/yashr17/url-shortener/issues)
 2. Open a new issue with detailed description
 3. Include error logs and steps to reproduce
 
