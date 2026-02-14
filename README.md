@@ -492,8 +492,9 @@ Wait for the rate limit window to reset (1 hour) or use a different API key.
 
 ## 📄 License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+MIT License - see the [LICENSE](LICENSE) file for details.
 
+**TL;DR:** You can use, modify, and distribute this code freely. Just include the original copyright notice.
 ---
 
 ## 👤 Author
