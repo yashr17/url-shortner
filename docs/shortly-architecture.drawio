@@ -1,0 +1,49 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36 OPR/127.0.0.0" version="29.3.8">
+  <diagram name="Page-1" id="UHyZ1CKSlT0VHPJp9ebv">
+    <mxGraphModel dx="2209" dy="1196" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="zJ0PIqrG5cWh9FeLugaK-26" edge="1" parent="1" source="zJ0PIqrG5cWh9FeLugaK-1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="zJ0PIqrG5cWh9FeLugaK-2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="zJ0PIqrG5cWh9FeLugaK-1" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="&lt;font style=&quot;font-size: 16px;&quot;&gt;Client Applications&lt;/font&gt;&lt;div&gt;&lt;font style=&quot;font-size: 16px;&quot;&gt;(Web, Mobile, API Consumers)&lt;/font&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="70" width="375" x="237.5" y="60" as="geometry" />
+        </mxCell>
+        <mxCell id="zJ0PIqrG5cWh9FeLugaK-24" edge="1" parent="1" source="zJ0PIqrG5cWh9FeLugaK-2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.25;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="zJ0PIqrG5cWh9FeLugaK-21">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="zJ0PIqrG5cWh9FeLugaK-25" edge="1" parent="1" source="zJ0PIqrG5cWh9FeLugaK-2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.737;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;exitPerimeter=0;" target="zJ0PIqrG5cWh9FeLugaK-22">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="zJ0PIqrG5cWh9FeLugaK-2" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="" vertex="1">
+          <mxGeometry height="320" width="609" x="121" y="200" as="geometry" />
+        </mxCell>
+        <mxCell id="zJ0PIqrG5cWh9FeLugaK-10" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="&lt;font style=&quot;font-size: 16px;&quot;&gt;Spring Boot REST API&lt;/font&gt;" vertex="1">
+          <mxGeometry height="30" width="220" x="315" y="230" as="geometry" />
+        </mxCell>
+        <mxCell id="zJ0PIqrG5cWh9FeLugaK-17" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="&lt;span style=&quot;font-size: 16px;&quot;&gt;Service + Cache Layer&lt;/span&gt;" vertex="1">
+          <mxGeometry height="70" width="375" x="237.5" y="410" as="geometry" />
+        </mxCell>
+        <mxCell id="zJ0PIqrG5cWh9FeLugaK-18" connectable="0" parent="1" style="group" value="" vertex="1">
+          <mxGeometry height="80" width="545" x="153" y="300" as="geometry" />
+        </mxCell>
+        <mxCell id="zJ0PIqrG5cWh9FeLugaK-11" parent="zJ0PIqrG5cWh9FeLugaK-18" style="rounded=1;whiteSpace=wrap;html=1;" value="&lt;font style=&quot;font-size: 16px;&quot;&gt;Redirect Controller&lt;/font&gt;" vertex="1">
+          <mxGeometry height="80" width="160" x="192" as="geometry" />
+        </mxCell>
+        <mxCell id="zJ0PIqrG5cWh9FeLugaK-12" parent="zJ0PIqrG5cWh9FeLugaK-18" style="rounded=1;whiteSpace=wrap;html=1;" value="&lt;font style=&quot;font-size: 16px;&quot;&gt;URLController&lt;/font&gt;" vertex="1">
+          <mxGeometry height="80" width="160" as="geometry" />
+        </mxCell>
+        <mxCell id="zJ0PIqrG5cWh9FeLugaK-13" parent="zJ0PIqrG5cWh9FeLugaK-18" style="rounded=1;whiteSpace=wrap;html=1;" value="&lt;font style=&quot;font-size: 16px;&quot;&gt;Analytics Controller&lt;/font&gt;" vertex="1">
+          <mxGeometry height="80" width="160" x="385" as="geometry" />
+        </mxCell>
+        <mxCell id="zJ0PIqrG5cWh9FeLugaK-21" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="&lt;font style=&quot;font-size: 16px;&quot;&gt;Redis Cache (Fast)&lt;/font&gt;" vertex="1">
+          <mxGeometry height="90" width="120" x="213" y="600" as="geometry" />
+        </mxCell>
+        <mxCell id="zJ0PIqrG5cWh9FeLugaK-22" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="&lt;font style=&quot;font-size: 16px;&quot;&gt;PostgreSQL Database (Durable)&lt;/font&gt;" vertex="1">
+          <mxGeometry height="90" width="170" x="485" y="600" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
